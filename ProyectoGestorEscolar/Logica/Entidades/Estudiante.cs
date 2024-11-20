@@ -8,8 +8,6 @@ namespace ProyectoGestorEscolar.Logica.Entidades
 {
     public class Estudiante
     {
-        public String Usuario { get; set; }
-        public String Pswd { get; set; }
         public String Nombres { get; set; }
         public String Apellidos { get; set; }
         public String Cedula { get; set; }
@@ -21,5 +19,8 @@ namespace ProyectoGestorEscolar.Logica.Entidades
         public String NombrePadre { get; set; }
         public String ApellidosPadre { get; set; }
         public String TelefonoPadre { get; set; }
+        public String Grado { get; set; }
+        public String Usuario { get; set; }
+        public String Pswd { get; set; }
     }
 }

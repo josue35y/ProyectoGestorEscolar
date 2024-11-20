@@ -41,7 +41,7 @@ namespace ProyectoGestorEscolar.Logica
                         GestorEscolarConexionDataContext ConexionProyecto = new GestorEscolarConexionDataContext();
                         ConexionProyecto.SP_INGRESAR_GRADO(req.grado.grado, req.grado.seccion, ref idErrorId, ref idErrorId, ref errorBD);
 
-
+                        //errorBD = "CULO";
                         if (idReturn <= 0)
                         {
                             res.Resultado = false;
@@ -83,6 +83,7 @@ namespace ProyectoGestorEscolar.Logica
                     GestorEscolarConexionDataContext ConexionProyecto = new GestorEscolarConexionDataContext();
                     ConexionProyecto.SP_BORRAR_GRADO(req.grado.grado, req.grado.seccion, ref idReturn, ref idErrorId, ref errorBD);
 
+                    //errorBD = "CULO";
                     if (idReturn <= 0)
                     {
                         res.Resultado = false;

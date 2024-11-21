@@ -68,6 +68,7 @@
     <Compile Include="Logica\Entidades\Request\ReqBuscarEstudiante.cs" />
     <Compile Include="Logica\Entidades\Request\ReqEliminarGrado.cs" />
     <Compile Include="Logica\Entidades\Request\ReqEliminarMateria.cs" />
+    <Compile Include="Logica\Entidades\Request\ReqIngresarPeriodo.cs" />
     <Compile Include="Logica\Entidades\Request\ReqMostrarMaterias.cs" />
     <Compile Include="Logica\Entidades\Request\ReqBuscarProfesor.cs" />
     <Compile Include="Logica\Entidades\Request\ReqEliminarAdministrador.cs" />
@@ -87,6 +88,7 @@
     <Compile Include="Logica\Entidades\Response\ResBuscarEstudiante.cs" />
     <Compile Include="Logica\Entidades\Response\ResEliminarGrado.cs" />
     <Compile Include="Logica\Entidades\Response\ResEliminarMateria.cs" />
+    <Compile Include="Logica\Entidades\Response\ResIngresarPeriodo.cs" />
     <Compile Include="Logica\Entidades\Response\ResMostrarMaterias.cs" />
     <Compile Include="Logica\Entidades\Response\ResBuscarProfesor.cs" />
     <Compile Include="Logica\Entidades\Response\ResEliminarAdministrador.cs" />
@@ -99,6 +101,7 @@
     <Compile Include="Logica\LogEstudiante.cs" />
     <Compile Include="Logica\LogGrado.cs" />
     <Compile Include="Logica\LogMateria.cs" />
+    <Compile Include="Logica\LogPeriodo.cs" />
     <Compile Include="Logica\LogProfesor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">

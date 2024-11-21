@@ -56,6 +56,7 @@
     <Compile Include="Logica\Entidades\Estudiante.cs" />
     <Compile Include="Logica\Entidades\Grado.cs" />
     <Compile Include="Logica\Entidades\Materia.cs" />
+    <Compile Include="Logica\Entidades\Periodo.cs" />
     <Compile Include="Logica\Entidades\Profesor.cs" />
     <Compile Include="Logica\Entidades\Request\ReqActualizarAdministrador.cs" />
     <Compile Include="Logica\Entidades\Request\ReqActualizarEstudiante.cs" />

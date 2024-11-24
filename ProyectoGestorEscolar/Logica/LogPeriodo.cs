@@ -112,6 +112,79 @@ namespace ProyectoGestorEscolar.Logica
 
 
         //culo
+        public ResEliminarPeriodo EliminarPeriodo(ReqEliminarPeriodo req)
+        {
+            ResEliminarPeriodo res = new ResEliminarPeriodo();
+            res.ListaErrores = new List<string>();
+            try
+            {
+                // Validar que req no sea null
+                if (req == null)
+                {
+                    res.Resultado = false;
+                    res.ListaErrores.Add("El objeto de solicitud es nulo.");
+                    return res;
+                }
+
+                // Validar que el periodo no sea nulo
+                if (req.periodo == null)
+                {
+                    res.Resultado = false;
+                    res.ListaErrores.Add("El objeto periodo es nulo.");
+                    return res;
+                }
+
+                // Validar que el año del periodo sea mayor que 0
+                if (req.periodo.ano <= 0)
+                {
+                    res.Resultado = false;
+                    res.ListaErrores.Add("El año debe ser un valor positivo.");
+                    return res;
+                }
+
+                // Validar que el ciclo no sea nulo o vacío
+                if (string.IsNullOrWhiteSpace(req.periodo.ciclo))
+                {
+                    res.Resultado = false;
+                    res.ListaErrores.Add("El ciclo no puede ser nulo o vacío.");
+                    return res;
+                }
+
+                // Variables para el procedimiento almacenado
+                int? idReturn = 0;
+                int? idErrorId = 0;
+                string errorBD = "";
+
+                // Realizar la conexión con la base de datos y llamar al procedimiento almacenado
+                using (GestorEscolarConexionDataContext ConexionProyecto = new GestorEscolarConexionDataContext())
+                {
+                    // Llamar al procedimiento almacenado con Año y Ciclo del periodo
+                    ConexionProyecto.SP_ELIMINAR_PERIODOS(
+                        req.periodo.ano,
+                        req.periodo.ciclo,
+                        ref idReturn,
+                        ref idErrorId,
+                        ref errorBD
+                    );
+
+                    if (idReturn <= 0)
+                    {
+                        res.Resultado = false;
+                        res.ListaErrores.Add($"Error en la base de datos: {errorBD}");
+                    }
+                    else
+                    {
+                        res.Resultado = true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                res.Resultado = false;
+                res.ListaErrores.Add($"ERROR GRAVE: {ex.Message}");
+            }
+            return res;
+        }
 
     }
 }

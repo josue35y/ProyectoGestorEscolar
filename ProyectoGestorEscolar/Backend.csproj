@@ -78,6 +78,7 @@
     <Compile Include="Logica\Entidades\Request\ReqIngresarEstudiante.cs" />
     <Compile Include="Logica\Entidades\Request\ReqIngresarProfesor.cs" />
     <Compile Include="Logica\Entidades\Request\ReqInsertarAdministrador.cs" />
+    <Compile Include="Logica\Entidades\Request\ReqMostrarPeriodos.cs" />
     <Compile Include="Logica\Entidades\Response\ResActualizarAdministrador.cs" />
     <Compile Include="Logica\Entidades\Response\ResActualizarEstudiante.cs" />
     <Compile Include="Logica\Entidades\Response\ResActualizarMateria.cs" />
@@ -99,6 +100,7 @@
     <Compile Include="Logica\Entidades\Response\ResIngresarEstudiante.cs" />
     <Compile Include="Logica\Entidades\Response\ResIngresarProfesor.cs" />
     <Compile Include="Logica\Entidades\Response\ResIngresarAdministrador.cs" />
+    <Compile Include="Logica\Entidades\Response\ResMostrarPeriodos.cs" />
     <Compile Include="Logica\LogAdministrador.cs" />
     <Compile Include="Logica\LogEstudiante.cs" />
     <Compile Include="Logica\LogGrado.cs" />

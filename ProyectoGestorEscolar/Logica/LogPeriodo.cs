@@ -14,7 +14,7 @@ namespace ProyectoGestorEscolar.Logica
         {
             ResIngresarPeriodo res = new ResIngresarPeriodo();
             res.ListaErrores = new List<string>();
-
+           
             try
             {
                 // Validar que req no sea null
@@ -73,6 +73,45 @@ namespace ProyectoGestorEscolar.Logica
 
             return res;
         }
+
+        public ResMostrarPeriodos MostrarPeriodos()
+        {
+            ResMostrarPeriodos res = new ResMostrarPeriodos();
+            res.ListaErrores = new List<string>();
+            res.listaPeriodos = new List<Periodo>();
+            try
+            {
+                GestorEscolarConexionDataContext ConexionProyecto = new GestorEscolarConexionDataContext();
+
+                int? idReturn = 0;
+                int? idErrorId = 0;
+                string errorBD = "";
+
+                // Ejecutar el procedimiento almacenado
+                ConexionProyecto.SP_MOSTRAR_PERIODOS(ref idReturn, ref idErrorId, ref errorBD);
+
+                // Validar si la ejecución fue exitosa
+                if (idReturn <= 0)
+                {
+                    res.Resultado = false;
+                    res.ListaErrores.Add(errorBD);
+                }
+                else
+                {
+                    res.Resultado = true;
+                    res.listaPeriodos = ConexionProyecto.ExecuteQuery<Periodo>("SELECT ano, ciclo FROM Periodo").ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                res.Resultado = false;
+                res.ListaErrores.Add($"ERROR GRAVE: {ex.Message}");
+            }
+            return res;
+        }
+
+
+
 
     }
 }

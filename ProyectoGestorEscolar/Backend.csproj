@@ -66,7 +66,7 @@
     <Compile Include="Logica\Entidades\Request\ReqAgregarMateria.cs" />
     <Compile Include="Logica\Entidades\Request\ReqBuscarAdministrador.cs" />
     <Compile Include="Logica\Entidades\Request\ReqBuscarEstudiante.cs" />
-    <Compile Include="Logica\Entidades\Request\ReqElimiarPeriodo.cs" />
+    <Compile Include="Logica\Entidades\Request\ReqEliminarPeriodo.cs" />
     <Compile Include="Logica\Entidades\Request\ReqEliminarGrado.cs" />
     <Compile Include="Logica\Entidades\Request\ReqEliminarMateria.cs" />
     <Compile Include="Logica\Entidades\Request\ReqIngresarPeriodo.cs" />

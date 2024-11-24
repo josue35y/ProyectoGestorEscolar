@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoGestorEscolar.Logica.Entidades
 {
-    public class ReqElimiarPeriodo
+    public class ReqEliminarPeriodo
     {
         public Periodo periodo { get; set; }
     }

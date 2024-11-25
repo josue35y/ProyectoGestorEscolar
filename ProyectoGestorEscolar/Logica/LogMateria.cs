@@ -201,5 +201,7 @@ namespace ProyectoGestorEscolar.Logica
 
             return res;
         }
+
+        //xulo oaxl
     }
 }

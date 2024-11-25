@@ -32,7 +32,7 @@ namespace APIRest.Controllers
 
         //Periodo/Eliminar
         [System.Web.Http.HttpPost]
-        [System.Web.Http.Route("API/Periodo/Mostrar")]
+        [System.Web.Http.Route("API/Periodo/Eliminar")]
         public ResEliminarPeriodo Eliminar(ReqEliminarPeriodo req)
         {
             LogPeriodo MiLogica = new LogPeriodo();

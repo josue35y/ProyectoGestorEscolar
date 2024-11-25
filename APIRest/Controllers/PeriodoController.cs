@@ -29,5 +29,17 @@ namespace APIRest.Controllers
             ResMostrarPeriodos res = new ResMostrarPeriodos();
             return res = MiLogica.MostrarPeriodos();
         }
+
+        //Periodo/Eliminar
+        [System.Web.Http.HttpPost]
+        [System.Web.Http.Route("API/Periodo/Eliminar")]
+        public ResEliminarPeriodo Eliminar(ReqEliminarPeriodo req)
+        {
+            LogPeriodo MiLogica = new LogPeriodo();
+            ResEliminarPeriodo res = new ResEliminarPeriodo();
+            return res = MiLogica.EliminarPeriodo(req);
+        }
+
+
     }
 }

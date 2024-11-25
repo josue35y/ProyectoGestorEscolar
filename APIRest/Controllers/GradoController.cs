@@ -26,5 +26,15 @@ namespace APIRest.Controllers
             LogGrado miLogica = new LogGrado();
             return miLogica.EliminarGrado(req);
         }
+
+        [System.Web.Http.HttpPost]
+        [System.Web.Http.Route("API/Grado/Mostrar")]
+        public ResMostrarGrados Mostrar(ReqMostrarGrados req)
+        {
+            LogGrado miLogica = new LogGrado();
+            return miLogica.MostrarGrados();
+        }
+
+
     }
 }

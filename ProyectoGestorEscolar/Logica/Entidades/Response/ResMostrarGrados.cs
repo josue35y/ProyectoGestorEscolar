@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace ProyectoGestorEscolar.Logica.Entidades
 {
-    public class ReqElimiarPeriodo
+    public class ResMostrarGrados : ResBase
     {
-        public Periodo periodo { get; set; }
+        public List<Grado> ListaGrados { get; set; } // Lista de grados
     }
 }

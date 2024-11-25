@@ -66,10 +66,11 @@
     <Compile Include="Logica\Entidades\Request\ReqAgregarMateria.cs" />
     <Compile Include="Logica\Entidades\Request\ReqBuscarAdministrador.cs" />
     <Compile Include="Logica\Entidades\Request\ReqBuscarEstudiante.cs" />
-    <Compile Include="Logica\Entidades\Request\ReqElimiarPeriodo.cs" />
+    <Compile Include="Logica\Entidades\Request\ReqEliminarPeriodo.cs" />
     <Compile Include="Logica\Entidades\Request\ReqEliminarGrado.cs" />
     <Compile Include="Logica\Entidades\Request\ReqEliminarMateria.cs" />
     <Compile Include="Logica\Entidades\Request\ReqIngresarPeriodo.cs" />
+    <Compile Include="Logica\Entidades\Request\ReqMostrarGrados.cs" />
     <Compile Include="Logica\Entidades\Request\ReqMostrarMaterias.cs" />
     <Compile Include="Logica\Entidades\Request\ReqBuscarProfesor.cs" />
     <Compile Include="Logica\Entidades\Request\ReqEliminarAdministrador.cs" />
@@ -92,6 +93,7 @@
     <Compile Include="Logica\Entidades\Response\ResEliminarMateria.cs" />
     <Compile Include="Logica\Entidades\Response\ResEliminarPeriodo.cs" />
     <Compile Include="Logica\Entidades\Response\ResIngresarPeriodo.cs" />
+    <Compile Include="Logica\Entidades\Response\ResMostrarGrados.cs" />
     <Compile Include="Logica\Entidades\Response\ResMostrarMaterias.cs" />
     <Compile Include="Logica\Entidades\Response\ResBuscarProfesor.cs" />
     <Compile Include="Logica\Entidades\Response\ResEliminarAdministrador.cs" />

@@ -315,6 +315,16 @@ namespace ProyectoGestorEscolar.Acceso_de_datos
 			eRRORDESCRIPCION = ((string)(result.GetParameterValue(4)));
 			return ((int)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_MOSTRAR_GRADOS")]
+		public ISingleResult<SP_MOSTRAR_GRADOSResult> SP_MOSTRAR_GRADOS([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IDRETURN", DbType="Int")] ref System.Nullable<int> iDRETURN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORID", DbType="Int")] ref System.Nullable<int> eRRORID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ERRORDESCRIPCION", DbType="NVarChar(MAX)")] ref string eRRORDESCRIPCION)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iDRETURN, eRRORID, eRRORDESCRIPCION);
+			iDRETURN = ((System.Nullable<int>)(result.GetParameterValue(0)));
+			eRRORID = ((System.Nullable<int>)(result.GetParameterValue(1)));
+			eRRORDESCRIPCION = ((string)(result.GetParameterValue(2)));
+			return ((ISingleResult<SP_MOSTRAR_GRADOSResult>)(result.ReturnValue));
+		}
 	}
 	
 	public partial class SP_ACTUALIZAR_ADMINISTRADORResult
@@ -2308,6 +2318,50 @@ namespace ProyectoGestorEscolar.Acceso_de_datos
 				if ((this._ciclo != value))
 				{
 					this._ciclo = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SP_MOSTRAR_GRADOSResult
+	{
+		
+		private int _GradoId;
+		
+		private int _Seccion;
+		
+		public SP_MOSTRAR_GRADOSResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GradoId", DbType="Int NOT NULL")]
+		public int GradoId
+		{
+			get
+			{
+				return this._GradoId;
+			}
+			set
+			{
+				if ((this._GradoId != value))
+				{
+					this._GradoId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Seccion", DbType="Int NOT NULL")]
+		public int Seccion
+		{
+			get
+			{
+				return this._Seccion;
+			}
+			set
+			{
+				if ((this._Seccion != value))
+				{
+					this._Seccion = value;
 				}
 			}
 		}

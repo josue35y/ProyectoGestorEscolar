@@ -29,11 +29,6 @@ namespace ProyectoGestorEscolar.Logica
                         res.Resultado = false;
                         res.ListaErrores.Add("Faltan la contraseña");
                     }
-                    if (String.IsNullOrEmpty(req.Profesor.Curso.ToString()))
-                    {
-                        res.Resultado = false;
-                        res.ListaErrores.Add("Falta asignar un curso");
-                    }
                     if (String.IsNullOrEmpty(req.Profesor.Nombre))
                     {
                         res.Resultado = false;
@@ -44,35 +39,16 @@ namespace ProyectoGestorEscolar.Logica
                         res.Resultado = false;
                         res.ListaErrores.Add("Falta los apellidos");
                     }
-                    if (String.IsNullOrEmpty(req.Profesor.Materias))
-                    {
-                        res.Resultado = false;
-                        res.ListaErrores.Add("Falta el nombre del curso"); //Lista de Cursos
-                    }
-                    if (String.IsNullOrEmpty(req.Profesor.Direccion))
-                    {
-                        res.Resultado = false;
-                        res.ListaErrores.Add("Falta la direccion");
-                    }
                     if (String.IsNullOrEmpty(req.Profesor.Cedula))
                     {
                         res.Resultado = false;
                         res.ListaErrores.Add("Falta la cedula");
                     }
-                    if (String.IsNullOrEmpty(req.Profesor.FechaNacimiento.ToString()))
-                    {
-                        res.Resultado = false;
-                        res.ListaErrores.Add("Falta la fecha de nacimiento");
-                    }
+                    
                     if (String.IsNullOrEmpty(req.Profesor.Telefono))
                     {
                         res.Resultado = false;
                         res.ListaErrores.Add("Falta el Telefono");
-                    }
-                    if (String.IsNullOrEmpty(req.Profesor.Calificacion))
-                    {
-                        res.Resultado = false;
-                        res.ListaErrores.Add("Falta la Calificacion");
                     }
                     if (String.IsNullOrEmpty(req.Profesor.Genero))
                     {
@@ -92,10 +68,10 @@ namespace ProyectoGestorEscolar.Logica
                         string errorBD = "";
 
                         GestorEscolarConexionDataContext ConexionProyecto = new GestorEscolarConexionDataContext();
-                        ConexionProyecto.SP_AGREGAR_PROFESOR(req.Profesor.NombreUsuario, req.Profesor.PSWD, req.Profesor.Curso,
-                            req.Profesor.Nombre, req.Profesor.Apellidos, req.Profesor.Materias, req.Profesor.Direccion,
-                            req.Profesor.Cedula, req.Profesor.FechaNacimiento, req.Profesor.Telefono, req.Profesor.Calificacion,
-                            req.Profesor.Genero, req.Profesor.Correo, ref idReturn, ref idErrorId, ref errorBD);
+                        ConexionProyecto.SP_AGREGAR_PROFESOR(req.Profesor.NombreUsuario, req.Profesor.PSWD,
+                            req.Profesor.Nombre, req.Profesor.Apellidos, req.Profesor.Cedula, 
+                            req.Profesor.Telefono, req.Profesor.Genero, req.Profesor.Correo, 
+                            ref idReturn, ref idErrorId, ref errorBD);
 
                         if (idReturn <= 0)
                         {
@@ -141,10 +117,10 @@ namespace ProyectoGestorEscolar.Logica
                     string errorBD = "";
 
                     GestorEscolarConexionDataContext ConexionProyecto = new GestorEscolarConexionDataContext();
-                    ConexionProyecto.SP_ACTUALIZAR_PROFESOR(req.Profesor.NombreUsuario, req.Profesor.PSWD, req.Profesor.Curso,
-                            req.Profesor.Nombre, req.Profesor.Apellidos, req.Profesor.Materias, req.Profesor.Direccion,
-                            req.Profesor.Cedula, req.Profesor.FechaNacimiento, req.Profesor.Telefono, req.Profesor.Calificacion,
-                            req.Profesor.Genero, req.Profesor.Correo, ref idReturn, ref idErrorId, ref errorBD);
+                    ConexionProyecto.SP_ACTUALIZAR_PROFESOR(req.Profesor.NombreUsuario, req.Profesor.PSWD,
+                            req.Profesor.Nombre, req.Profesor.Apellidos, req.Profesor.Cedula,
+                            req.Profesor.Telefono, req.Profesor.Genero, req.Profesor.Correo,
+                            ref idReturn, ref idErrorId, ref errorBD);
 
                     if (idReturn <= 0)
                     {
@@ -193,18 +169,13 @@ namespace ProyectoGestorEscolar.Logica
                         {
                             NombreUsuario = r.NombreUsuario,
                             PSWD = r.PSWD,
-                            Curso = r.Curso,
                             Nombre = r.Nombre,
                             Apellidos = r.Apellidos,
-                            Materias = r.Materias,
-                            Direccion = r.Direccion,
-                            Cedula = r.Cedula,
-                            FechaNacimiento = r.FechaNacimiento,
+                            FechaInicio = (DateTime)r.FechaInicio,
                             Telefono = r.Telefono,
-                            Calificacion = r.Calificacion,
+                            Cedula = r.Cedula,
                             Genero = r.Genero,
-                            Correo = r.Correo,
-                            FechaInicio = (DateTime)r.FechaInicio
+                            Correo = r.Correo
                         }).FirstOrDefault();
                     }
                     else

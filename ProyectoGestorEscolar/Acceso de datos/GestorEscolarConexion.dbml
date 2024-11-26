@@ -51,40 +51,6 @@
       <Column Name="TelefonoPadre" Type="System.String" DbType="NVarChar(11) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-  <Function Name="dbo.SP_ACTUALIZAR_PROFESOR" Method="SP_ACTUALIZAR_PROFESOR">
-    <Parameter Name="NombreUsuario" Parameter="nombreUsuario" Type="System.String" DbType="NVarChar(127)" />
-    <Parameter Name="PSWD" Parameter="pSWD" Type="System.String" DbType="NVarChar(255)" />
-    <Parameter Name="Curso" Parameter="curso" Type="System.Int32" DbType="Int" />
-    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="NVarChar(127)" />
-    <Parameter Name="Apellidos" Parameter="apellidos" Type="System.String" DbType="NVarChar(127)" />
-    <Parameter Name="Materias" Parameter="materias" Type="System.String" DbType="NVarChar(31)" />
-    <Parameter Name="Direccion" Parameter="direccion" Type="System.String" DbType="NVarChar(255)" />
-    <Parameter Name="Cedula" Parameter="cedula" Type="System.String" DbType="NVarChar(20)" />
-    <Parameter Name="FechaNacimiento" Parameter="fechaNacimiento" Type="System.DateTime" DbType="DateTime" />
-    <Parameter Name="Telefono" Parameter="telefono" Type="System.String" DbType="NVarChar(31)" />
-    <Parameter Name="Calificacion" Parameter="calificacion" Type="System.String" DbType="NVarChar(127)" />
-    <Parameter Name="Genero" Parameter="genero" Type="System.String" DbType="NVarChar(15)" />
-    <Parameter Name="Correo" Parameter="correo" Type="System.String" DbType="NVarChar(255)" />
-    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
-    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
-    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
-    <ElementType Name="SP_ACTUALIZAR_PROFESORResult">
-      <Column Name="NombreUsuario" Type="System.String" DbType="NVarChar(127) NOT NULL" CanBeNull="false" />
-      <Column Name="PSWD" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
-      <Column Name="Curso" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Nombre" Type="System.String" DbType="NVarChar(127) NOT NULL" CanBeNull="false" />
-      <Column Name="Apellidos" Type="System.String" DbType="NVarChar(127) NOT NULL" CanBeNull="false" />
-      <Column Name="Materias" Type="System.String" DbType="NVarChar(31) NOT NULL" CanBeNull="false" />
-      <Column Name="Direccion" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
-      <Column Name="Cedula" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="FechaNacimiento" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="Telefono" Type="System.String" DbType="NVarChar(31) NOT NULL" CanBeNull="false" />
-      <Column Name="Calificacion" Type="System.String" DbType="NVarChar(127) NOT NULL" CanBeNull="false" />
-      <Column Name="Genero" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
-      <Column Name="Correo" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
-      <Column Name="FechaInicio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.SP_AGREGAR_ADMINISTRADOR" Method="SP_AGREGAR_ADMINISTRADOR">
     <Parameter Name="Usuario" Parameter="usuario" Type="System.String" DbType="NVarChar(127)" />
     <Parameter Name="Pswd" Parameter="pswd" Type="System.String" DbType="NVarChar(255)" />
@@ -110,25 +76,6 @@
     <Parameter Name="NombrePadre" Parameter="nombrePadre" Type="System.String" DbType="NVarChar(127)" />
     <Parameter Name="ApellidosPadre" Parameter="apellidosPadre" Type="System.String" DbType="NVarChar(127)" />
     <Parameter Name="TelefonoPadre" Parameter="telefonoPadre" Type="System.String" DbType="NVarChar(11)" />
-    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
-    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
-    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.SP_AGREGAR_PROFESOR" Method="SP_AGREGAR_PROFESOR">
-    <Parameter Name="NombreUsuario" Parameter="nombreUsuario" Type="System.String" DbType="NVarChar(127)" />
-    <Parameter Name="Pswd" Parameter="pswd" Type="System.String" DbType="NVarChar(255)" />
-    <Parameter Name="Curso" Parameter="curso" Type="System.Int32" DbType="Int" />
-    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="NVarChar(127)" />
-    <Parameter Name="Apellidos" Parameter="apellidos" Type="System.String" DbType="NVarChar(127)" />
-    <Parameter Name="Materias" Parameter="materias" Type="System.String" DbType="NVarChar(31)" />
-    <Parameter Name="Direccion" Parameter="direccion" Type="System.String" DbType="NVarChar(255)" />
-    <Parameter Name="Cedula" Parameter="cedula" Type="System.String" DbType="NVarChar(20)" />
-    <Parameter Name="FechaNacimiento" Parameter="fechaNacimiento" Type="System.DateTime" DbType="DateTime" />
-    <Parameter Name="Telefono" Parameter="telefono" Type="System.String" DbType="NVarChar(31)" />
-    <Parameter Name="Calificacion" Parameter="calificacion" Type="System.String" DbType="NVarChar(127)" />
-    <Parameter Name="Genero" Parameter="genero" Type="System.String" DbType="NVarChar(10)" />
-    <Parameter Name="Correo" Parameter="correo" Type="System.String" DbType="NVarChar(100)" />
     <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
     <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
     <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
@@ -341,5 +288,44 @@
       <Column Name="GradoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Seccion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </ElementType>
+  </Function>
+  <Function Name="dbo.SP_ACTUALIZAR_PROFESOR" Method="SP_ACTUALIZAR_PROFESOR">
+    <Parameter Name="NombreUsuario" Parameter="nombreUsuario" Type="System.String" DbType="NVarChar(127)" />
+    <Parameter Name="PSWD" Parameter="pSWD" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="NVarChar(127)" />
+    <Parameter Name="Apellidos" Parameter="apellidos" Type="System.String" DbType="NVarChar(127)" />
+    <Parameter Name="FechaInicio" Parameter="fechaInicio" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Telefono" Parameter="telefono" Type="System.String" DbType="NVarChar(31)" />
+    <Parameter Name="Cedula" Parameter="cedula" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="Genero" Parameter="genero" Type="System.String" DbType="NVarChar(15)" />
+    <Parameter Name="Correo" Parameter="correo" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <ElementType Name="SP_ACTUALIZAR_PROFESORResult">
+      <Column Name="NombreUsuario" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Apellidos" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaInicio" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Telefono" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Genero" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Correo" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_AGREGAR_PROFESOR" Method="SP_AGREGAR_PROFESOR">
+    <Parameter Name="NombreUsuario" Parameter="nombreUsuario" Type="System.String" DbType="NVarChar(127)" />
+    <Parameter Name="Pswd" Parameter="pswd" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Curso" Parameter="curso" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="NVarChar(127)" />
+    <Parameter Name="Apellidos" Parameter="apellidos" Type="System.String" DbType="NVarChar(127)" />
+    <Parameter Name="Cedula" Parameter="cedula" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="FechaInicio" Parameter="fechaInicio" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Telefono" Parameter="telefono" Type="System.String" DbType="NVarChar(31)" />
+    <Parameter Name="Genero" Parameter="genero" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="Correo" Parameter="correo" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
   </Function>
 </Database>

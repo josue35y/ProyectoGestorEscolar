@@ -39,12 +39,12 @@ namespace ProyectoGestorEscolar.Logica
 
 
                         GestorEscolarConexionDataContext ConexionProyecto = new GestorEscolarConexionDataContext();
-                        ConexionProyecto.SP_INGRESAR_GRADO(req.grado.grado, req.grado.seccion, ref idErrorId, ref idErrorId, ref errorBD);
+                        ConexionProyecto.SP_INGRESAR_GRADO(req.grado.grado, req.grado.seccion, ref idReturn, ref idErrorId, ref errorBD);
 
                         //errorBD = "CULO";
                         if (idReturn <= 0)
                         {
-                            res.Resultado = false;
+                            res.Resultado = true;
                             res.ListaErrores.Add(errorBD);
                         }
                         else
@@ -109,6 +109,50 @@ namespace ProyectoGestorEscolar.Logica
             return res;
         }
 
+        //MostrarGrado  
+        public ResMostrarGrados MostrarGrados()
+        {
+            ResMostrarGrados res = new ResMostrarGrados();
+            res.ListaErrores = new List<string>();
+            res.ListaGrados = new List<Grado>();
 
+            try
+            {
+                using (GestorEscolarConexionDataContext ConexionProyecto = new GestorEscolarConexionDataContext())
+                {
+                    // Declarar variables de salida
+                    int? idReturn = 0;
+                    int? errorId = 0;
+                    string errorDescripcion = "";
+
+                    // Ejecutar el procedimiento almacenado
+                    ConexionProyecto.SP_MOSTRAR_GRADOS(
+                        ref idReturn,
+                        ref errorId,
+                        ref errorDescripcion
+                    );
+
+                    // Validar si hubo errores
+                    if (idReturn <= 0)
+                    {
+                        res.Resultado = false;
+                        res.ListaErrores.Add($"Error {errorId}: {errorDescripcion}");
+                    }
+                    else
+                    {
+                        res.Resultado = true;
+                        // Obtener los datos directamente desde la tabla
+                        res.ListaGrados = ConexionProyecto.ExecuteQuery<Grado>("SELECT grado, seccion FROM Grado").ToList();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                res.Resultado = false;
+                res.ListaErrores.Add($"ERROR GRAVE: {ex.Message}");
+            }
+
+            return res;
+        }
     }
 }

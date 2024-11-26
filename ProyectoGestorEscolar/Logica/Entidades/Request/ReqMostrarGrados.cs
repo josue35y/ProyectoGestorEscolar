@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoGestorEscolar.Logica.Entidades
 {
-    public class ReqMostrarMaterias
+    public class ReqMostrarGrados
     {
-        //public Materia Materia {  get; set; }
     }
 }
